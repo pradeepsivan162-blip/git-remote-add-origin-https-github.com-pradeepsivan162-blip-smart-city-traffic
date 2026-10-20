@@ -1,0 +1,23 @@
+{
+  "source_file": "c:\\Users\\prade\\Downloads\\pms.csv\\compressed_data.csv",
+  "output_file": "C:\\Users\\prade\\.gemini\\antigravity\\scratch\\smart-city-traffic\\data\\PEMS_BAY_cleaned_long.csv",
+  "dataset": "PEMS-BAY (California Bay Area, Jan\u2013Jun 2017)",
+  "units": "mph (miles per hour)",
+  "license": "Creative Commons Attribution 4.0 International",
+  "timestamp_range_start": "2017-01-01 00:00:00",
+  "timestamp_range_end": "2017-06-30 23:55:00",
+  "rows_after_ts_clean": 52116,
+  "ts_invalid_dropped": "0",
+  "ts_duplicates_removed": "0",
+  "sampling_interval_min": 5,
+  "total_sensor_cells": 16937700,
+  "missing_values": 0,
+  "missing_pct": 0.0,
+  "sensors_with_any_missing": 0,
+  "sensor_count": 325,
+  "iqr_lower_bound": 45.9,
+  "iqr_upper_bound": 83.7,
+  "outlier_cells_flagged": 1064481,
+  "final_long_rows": 16937700,
+  "final_sensors": 325
+}

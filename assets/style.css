@@ -1,0 +1,120 @@
+/* assets/style.css
+   Dark-mode theme for Smart City Traffic Analytics dashboard.
+   Matches the navy/neon reference screenshot.
+*/
+
+/* ── Root & background ─────────────────────────────────────────── */
+.stApp {
+    background-color: #0D1B2A;
+    color: #C8D6E5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+section[data-testid="stSidebar"] {
+    background-color: #0A1628 !important;
+    border-right: 1px solid #1E3A5F;
+}
+
+/* ── Headers ────────────────────────────────────────────────────── */
+h1, h2, h3, h4 {
+    color: #00D4FF !important;
+}
+
+/* ── Metric cards ────────────────────────────────────────────────── */
+[data-testid="metric-container"] {
+    background-color: #0F2337;
+    border: 1px solid #1E3A5F;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 212, 255, 0.1);
+}
+
+[data-testid="metric-container"] label {
+    color: #8B9DC3 !important;
+    font-size: 0.85rem !important;
+}
+
+[data-testid="metric-container"] [data-testid="metric-value"] {
+    color: #00D4FF !important;
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────── */
+.stButton > button {
+    background-color: #00D4FF;
+    color: #0D1B2A;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+.stButton > button:hover {
+    background-color: #00A8CC;
+    color: #0D1B2A;
+}
+
+/* ── Selectbox / Sliders ─────────────────────────────────────────── */
+.stSelectbox > div > div {
+    background-color: #0F2337;
+    color: #C8D6E5;
+    border: 1px solid #1E3A5F;
+}
+
+/* ── Dataframe / Table ────────────────────────────────────────────── */
+.stDataFrame {
+    background-color: #0F2337;
+    border-radius: 8px;
+}
+
+/* ── Dividers ─────────────────────────────────────────────────────── */
+hr {
+    border-color: #1E3A5F !important;
+}
+
+/* ── Info / Warning boxes ─────────────────────────────────────────── */
+.stAlert {
+    border-radius: 8px;
+}
+
+/* ── Plotly chart backgrounds ────────────────────────────────────── */
+.js-plotly-plot .plotly {
+    background-color: transparent !important;
+}
+
+/* ── Tabs ─────────────────────────────────────────────────────────── */
+.stTabs [data-baseweb="tab"] {
+    background-color: #0F2337;
+    color: #8B9DC3;
+    border-bottom: 2px solid transparent;
+}
+.stTabs [aria-selected="true"] {
+    color: #00D4FF !important;
+    border-bottom: 2px solid #00D4FF !important;
+}
+
+/* ── KPI highlight box ────────────────────────────────────────────── */
+.kpi-box {
+    background: linear-gradient(135deg, #0F2337, #1E3A5F);
+    border: 1px solid #00D4FF33;
+    border-radius: 12px;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.15);
+}
+.kpi-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00D4FF;
+}
+.kpi-label {
+    font-size: 0.85rem;
+    color: #8B9DC3;
+    margin-top: 0.3rem;
+}
+
+/* ── Status badges ───────────────────────────────────────────────── */
+.badge-green  { color: #00C851; font-weight: bold; }
+.badge-yellow { color: #FFD700; font-weight: bold; }
+.badge-orange { color: #FF8C00; font-weight: bold; }
+.badge-red    { color: #FF1744; font-weight: bold; }

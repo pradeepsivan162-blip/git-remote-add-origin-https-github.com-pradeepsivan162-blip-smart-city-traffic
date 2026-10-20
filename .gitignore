@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# Environment Variables & Secrets
+.env
+*.env
+
+# Large raw & full cleaned datasets (Exceeds GitHub 100MB limit)
+# Note: data/sample_demo.csv IS tracked and committed for cloud hosting!
+data/PEMS_BAY_cleaned_long.csv
+data/*.zip
+data/*.tar.gz
+
+# Local IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Notebook checkpoints
+.ipynb_checkpoints/

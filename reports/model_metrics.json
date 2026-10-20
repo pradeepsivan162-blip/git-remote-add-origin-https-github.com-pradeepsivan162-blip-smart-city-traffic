@@ -1,0 +1,301 @@
+{
+  "sensors": [
+    "414694",
+    "400001",
+    "400017",
+    "400030",
+    "400040",
+    "407373",
+    "407372",
+    "407370",
+    "407367",
+    "407364"
+  ],
+  "horizons": {
+    "15": {
+      "horizon_min": 15,
+      "best_model": "xgboost",
+      "models": {
+        "persistence": {
+          "test_mae": 2.124041709314227,
+          "test_rmse": 4.490616809479556
+        },
+        "seasonal": {
+          "test_mae": 5.359452670687302,
+          "test_rmse": 8.323013882397197
+        },
+        "random_forest": {
+          "val_mae": 2.019898144068114,
+          "val_rmse": 3.95641199403516,
+          "test_mae": 1.982336301405023,
+          "test_rmse": 3.8885353323152807,
+          "train_sec": 178.1
+        },
+        "xgboost": {
+          "val_mae": 1.9868777313842578,
+          "val_rmse": 3.9518583173589388,
+          "test_mae": 1.923248507593403,
+          "test_rmse": 3.8126522660681794,
+          "train_sec": 12.3
+        }
+      },
+      "meta": {
+        "model_name": "xgboost",
+        "version": "20261020_132028",
+        "horizon_min": 15,
+        "sensors_trained_on": [
+          "414694",
+          "400001",
+          "400017",
+          "400030",
+          "400040",
+          "407373",
+          "407372",
+          "407370",
+          "407367",
+          "407364"
+        ],
+        "n_train": 364700,
+        "n_val": 78150,
+        "n_test": 78160,
+        "feature_cols": [
+          "lag_1",
+          "lag_3",
+          "lag_6",
+          "lag_12",
+          "roll_mean_3",
+          "roll_mean_6",
+          "roll_mean_12",
+          "roll_std_3",
+          "roll_std_6",
+          "roll_std_12",
+          "hour",
+          "day_of_week",
+          "is_weekend",
+          "month",
+          "hour_sin",
+          "hour_cos",
+          "dow_sin",
+          "dow_cos"
+        ],
+        "model_path": "C:\\Users\\prade\\.gemini\\antigravity\\scratch\\smart-city-traffic\\models\\best_model_15min_v20261020_132028.joblib",
+        "scaler_path": "C:\\Users\\prade\\.gemini\\antigravity\\scratch\\smart-city-traffic\\models\\scaler_15min_v20261020_132028.joblib",
+        "trained_at": "2026-10-20T13:20:28.888941",
+        "test_preds_sample": [
+          67.60623131680916,
+          67.70525560117021,
+          67.82768640507166,
+          67.81671441689295,
+          67.81980007133383,
+          67.83409874268824,
+          67.89505095110117,
+          67.63909558449033,
+          67.71565663725956,
+          67.78943998787139
+        ],
+        "test_actual_sample": [
+          68.2,
+          68.2,
+          68.1,
+          67.3,
+          67.6,
+          68.0,
+          67.0,
+          66.9,
+          67.9,
+          67.6
+        ]
+      }
+    },
+    "30": {
+      "horizon_min": 30,
+      "best_model": "xgboost",
+      "models": {
+        "persistence": {
+          "test_mae": 2.6948662827895076,
+          "test_rmse": 5.886547944683232
+        },
+        "seasonal": {
+          "test_mae": 5.362869645206711,
+          "test_rmse": 8.326360298949577
+        },
+        "random_forest": {
+          "val_mae": 2.453488278199281,
+          "val_rmse": 4.863552738307668,
+          "test_mae": 2.4443836211882397,
+          "test_rmse": 4.784242744691065,
+          "train_sec": 313.4
+        },
+        "xgboost": {
+          "val_mae": 2.4465609453607664,
+          "val_rmse": 4.91079044247426,
+          "test_mae": 2.379828328767192,
+          "test_rmse": 4.683310999540407,
+          "train_sec": 35.1
+        }
+      },
+      "meta": {
+        "model_name": "xgboost",
+        "version": "20261020_132624",
+        "horizon_min": 30,
+        "sensors_trained_on": [
+          "414694",
+          "400001",
+          "400017",
+          "400030",
+          "400040",
+          "407373",
+          "407372",
+          "407370",
+          "407367",
+          "407364"
+        ],
+        "n_train": 364680,
+        "n_val": 78150,
+        "n_test": 78150,
+        "feature_cols": [
+          "lag_1",
+          "lag_3",
+          "lag_6",
+          "lag_12",
+          "roll_mean_3",
+          "roll_mean_6",
+          "roll_mean_12",
+          "roll_std_3",
+          "roll_std_6",
+          "roll_std_12",
+          "hour",
+          "day_of_week",
+          "is_weekend",
+          "month",
+          "hour_sin",
+          "hour_cos",
+          "dow_sin",
+          "dow_cos"
+        ],
+        "model_path": "C:\\Users\\prade\\.gemini\\antigravity\\scratch\\smart-city-traffic\\models\\best_model_30min_v20261020_132624.joblib",
+        "scaler_path": "C:\\Users\\prade\\.gemini\\antigravity\\scratch\\smart-city-traffic\\models\\scaler_30min_v20261020_132624.joblib",
+        "trained_at": "2026-10-20T13:26:24.635861",
+        "test_preds_sample": [
+          66.91192348750099,
+          67.4539119212451,
+          67.50549666622808,
+          67.64762509923705,
+          67.60127339794936,
+          67.59614614365543,
+          67.87144500819316,
+          67.93655113267656,
+          67.95272791946392,
+          67.155304336495
+        ],
+        "test_actual_sample": [
+          68.2,
+          68.1,
+          67.3,
+          67.6,
+          68.0,
+          67.0,
+          66.9,
+          67.9,
+          67.6,
+          66.3
+        ]
+      }
+    },
+    "60": {
+      "horizon_min": 60,
+      "best_model": "random_forest",
+      "models": {
+        "persistence": {
+          "test_mae": 3.612112874328129,
+          "test_rmse": 7.783693134192085
+        },
+        "seasonal": {
+          "test_mae": 5.361270165077345,
+          "test_rmse": 8.324461373435499
+        },
+        "random_forest": {
+          "val_mae": 2.9407889235642197,
+          "val_rmse": 5.824210009481828,
+          "test_mae": 2.951218688988612,
+          "test_rmse": 5.727057347831654,
+          "train_sec": 331.3
+        },
+        "xgboost": {
+          "val_mae": 2.9430657137621083,
+          "val_rmse": 5.697005728897297,
+          "test_mae": 2.885410974867239,
+          "test_rmse": 5.462499229588116,
+          "train_sec": 11.0
+        }
+      },
+      "meta": {
+        "model_name": "random_forest",
+        "version": "20261020_133220",
+        "horizon_min": 60,
+        "sensors_trained_on": [
+          "414694",
+          "400001",
+          "400017",
+          "400030",
+          "400040",
+          "407373",
+          "407372",
+          "407370",
+          "407367",
+          "407364"
+        ],
+        "n_train": 364640,
+        "n_val": 78140,
+        "n_test": 78140,
+        "feature_cols": [
+          "lag_1",
+          "lag_3",
+          "lag_6",
+          "lag_12",
+          "roll_mean_3",
+          "roll_mean_6",
+          "roll_mean_12",
+          "roll_std_3",
+          "roll_std_6",
+          "roll_std_12",
+          "hour",
+          "day_of_week",
+          "is_weekend",
+          "month",
+          "hour_sin",
+          "hour_cos",
+          "dow_sin",
+          "dow_cos"
+        ],
+        "model_path": "C:\\Users\\prade\\.gemini\\antigravity\\scratch\\smart-city-traffic\\models\\best_model_60min_v20261020_133220.joblib",
+        "scaler_path": "C:\\Users\\prade\\.gemini\\antigravity\\scratch\\smart-city-traffic\\models\\scaler_60min_v20261020_133220.joblib",
+        "trained_at": "2026-10-20T13:32:20.579887",
+        "test_preds_sample": [
+          66.93785293840828,
+          67.02116638209502,
+          66.89291670393806,
+          67.18163126937958,
+          67.35974806377702,
+          67.49257752690761,
+          67.42446347753945,
+          67.51294714578256,
+          67.53320691394484,
+          67.5753775405888
+        ],
+        "test_actual_sample": [
+          68.1,
+          67.3,
+          67.6,
+          68.0,
+          67.0,
+          66.9,
+          67.9,
+          67.6,
+          66.3,
+          66.4
+        ]
+      }
+    }
+  }
+}
