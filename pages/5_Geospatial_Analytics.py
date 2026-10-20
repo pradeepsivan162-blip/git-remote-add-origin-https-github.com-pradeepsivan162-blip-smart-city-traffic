@@ -88,19 +88,34 @@ if has_locations:
             tooltip={"text": "Sensor: {sensor_id}\nAvg Speed: {mean_speed} mph"},
             map_style="mapbox://styles/mapbox/dark-v10",
         ))
-    except ImportError:
-        fig_map = px.scatter_mapbox(
-            map_df,
-            lat="latitude", lon="longitude",
-            color="mean_speed",
-            color_continuous_scale=["#FF1744", "#FF8C00", "#FFD700", "#00C851"],
-            size_max=15, zoom=9,
-            hover_data=["sensor_id", "mean_speed", "min_speed", "max_speed"],
-            mapbox_style="carto-darkmatter",
-            template="plotly_dark",
-        )
-        fig_map.update_layout(height=600, margin=dict(l=0, r=0, t=0, b=0))
-        st.plotly_chart(fig_map, use_container_width=True)
+    except Exception:
+        if hasattr(px, "scatter_map"):
+            fig_map = px.scatter_map(
+                map_df,
+                lat="latitude", lon="longitude",
+                color="mean_speed",
+                color_continuous_scale=["#FF1744", "#FF8C00", "#FFD700", "#00C851"],
+                size_max=15, zoom=9,
+                hover_data=["sensor_id", "mean_speed", "min_speed", "max_speed"],
+                template="plotly_dark",
+            )
+            fig_map.update_layout(height=600, margin=dict(l=0, r=0, t=0, b=0), map_style="carto-darkmatter")
+            st.plotly_chart(fig_map, use_container_width=True)
+        elif hasattr(px, "scatter_mapbox"):
+            fig_map = px.scatter_mapbox(
+                map_df,
+                lat="latitude", lon="longitude",
+                color="mean_speed",
+                color_continuous_scale=["#FF1744", "#FF8C00", "#FFD700", "#00C851"],
+                size_max=15, zoom=9,
+                hover_data=["sensor_id", "mean_speed", "min_speed", "max_speed"],
+                mapbox_style="carto-darkmatter",
+                template="plotly_dark",
+            )
+            fig_map.update_layout(height=600, margin=dict(l=0, r=0, t=0, b=0))
+            st.plotly_chart(fig_map, use_container_width=True)
+        else:
+            st.map(map_df.rename(columns={"latitude": "lat", "longitude": "lon"}))
 else:
     # ── NO-MAP MODE ──────────────────────────────────────────────
     st.info(
