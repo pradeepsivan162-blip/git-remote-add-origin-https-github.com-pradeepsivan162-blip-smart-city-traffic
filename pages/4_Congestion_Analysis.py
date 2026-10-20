@@ -48,28 +48,30 @@ col1, col2 = st.columns([1, 2])
 with col1:
     st.markdown("### 🍩 Congestion Level Distribution")
     dist = congestion_distribution(df)
-    # ensure consistent ordering
-    level_order = ["free_flow", "moderate", "heavy", "severe"]
-    dist["level"] = pd.Categorical(dist["congestion_level"], categories=level_order, ordered=True)
-    dist = dist.sort_values("level")
+    if not dist.empty and "congestion_level" in dist.columns:
+        level_order = ["free_flow", "moderate", "heavy", "severe"]
+        dist["level"] = pd.Categorical(dist["congestion_level"], categories=level_order, ordered=True)
+        dist = dist.sort_values("level")
 
-    fig_donut = px.pie(
-        dist,
-        names=dist["congestion_level"].map(CONGESTION_LABELS),
-        values="count",
-        hole=0.55,
-        color=dist["congestion_level"],
-        color_discrete_map={v: CONGESTION_COLORS[k] for k, v in CONGESTION_LABELS.items()},
-        template="plotly_dark",
-    )
-    fig_donut.update_traces(textposition="inside", textinfo="percent+label")
-    fig_donut.update_layout(
-        height=360,
-        paper_bgcolor="#0D1B2A",
-        margin=dict(l=0, r=0, t=30, b=0),
-        showlegend=False,
-    )
-    st.plotly_chart(fig_donut, use_container_width=True)
+        fig_donut = px.pie(
+            dist,
+            names=dist["congestion_level"].map(CONGESTION_LABELS),
+            values="count",
+            hole=0.55,
+            color=dist["congestion_level"],
+            color_discrete_map={v: CONGESTION_COLORS[k] for k, v in CONGESTION_LABELS.items()},
+            template="plotly_dark",
+        )
+        fig_donut.update_traces(textposition="inside", textinfo="percent+label")
+        fig_donut.update_layout(
+            height=360,
+            paper_bgcolor="#0D1B2A",
+            margin=dict(l=0, r=0, t=30, b=0),
+            showlegend=False,
+        )
+        st.plotly_chart(fig_donut, use_container_width=True)
+    else:
+        st.info("No congestion data available.")
 
 with col2:
     st.markdown("### ⏰ Hourly Congestion Heatmap")

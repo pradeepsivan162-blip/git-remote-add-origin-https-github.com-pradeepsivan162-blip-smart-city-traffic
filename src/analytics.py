@@ -225,12 +225,11 @@ def congestion_distribution(df: pd.DataFrame) -> pd.DataFrame:
     from src.congestion import classify_series
     df = df.copy()
     df["congestion_level"] = classify_series(df["observed_speed"])
-    return (
-        df["congestion_level"]
-        .value_counts()
-        .reset_index()
-        .rename(columns={"index": "level", "congestion_level": "count"})
-    )
+    counts = df["congestion_level"].value_counts()
+    return pd.DataFrame({
+        "congestion_level": counts.index.tolist(),
+        "count": counts.values.tolist(),
+    })
 
 
 def sensor_congestion_profile(df: pd.DataFrame) -> pd.DataFrame:
